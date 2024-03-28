@@ -26,15 +26,69 @@
 <body>
     <div class="pokemon" id="pokemon">P</div>
     <button onclick="movePokemon()">Move Pokémon</button>
+    <button onclick="catchPokemon()">Catch Pokémon</button>
+    <button onclick="healPokemon()">Use Potion</button>
+    <button onclick="evolvePokemon()">Evolve Pokémon</button>
+    <button onclick="showPokedex()">Open Pokédex</button>
 
     <script>
         // JavaScript logic
         const pokemon = document.getElementById('pokemon');
         let positionX = 0;
+        let pokemonHealth = 100;
+        let pokemonLevel = 1;
+        let pokemonExperience = 0;
+        let isEvolved = false;
 
         function movePokemon() {
             positionX += 10;
             pokemon.style.transform = `translateX(${positionX}px)`;
+        }
+
+        function catchPokemon() {
+            // Simulate catching a Pokémon
+            const catchChance = Math.random();
+            if (catchChance > 0.5) {
+                alert('You caught a wild Pokémon!');
+                pokemonExperience += 10;
+                checkLevelUp();
+            } else {
+                alert('The Pokémon escaped!');
+            }
+        }
+
+        function healPokemon() {
+            // Use a Potion to heal Pokémon
+            pokemonHealth += 20;
+            if (pokemonHealth > 100) {
+                pokemonHealth = 100;
+            }
+            alert('Your Pokémon has been healed!');
+        }
+
+        function evolvePokemon() {
+            if (pokemonExperience >= 50 && !isEvolved) {
+                isEvolved = true;
+                pokemonLevel++;
+                alert('Congratulations! Your Pokémon evolved!');
+            }
+        }
+
+        function showPokedex() {
+            // Display Pokémon information in a Pokédex
+            alert(`Pokémon Info:
+            Level: ${pokemonLevel}
+            Health: ${pokemonHealth}
+            Experience: ${pokemonExperience}
+            Evolved: ${isEvolved ? 'Yes' : 'No'}`);
+        }
+
+        function checkLevelUp() {
+            if (pokemonExperience >= 50) {
+                alert('Your Pokémon leveled up!');
+                pokemonLevel++;
+                isEvolved = false;
+            }
         }
     </script>
 </body>
