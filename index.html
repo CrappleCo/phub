@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Game</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pokemon {
+            /* Style your Pokémon here */
+            width: 100px;
+            height: 100px;
+            background-color: #ffcc00;
+            border: 2px solid #333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="pokemon" id="pokemon">P</div>
+    <button onclick="movePokemon()">Move Pokémon</button>
+
+    <script>
+        // JavaScript logic
+        const pokemon = document.getElementById('pokemon');
+        let positionX = 0;
+
+        function movePokemon() {
+            positionX += 10;
+            pokemon.style.transform = `translateX(${positionX}px)`;
+        }
+    </script>
+</body>
+</html>
