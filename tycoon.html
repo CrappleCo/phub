@@ -54,7 +54,24 @@
             </div>
         </div>
     </div>
+           <div id="items">
+                <div class="item">
+                    <p>Lemonade Stand</p>
+                    <p>Cost: 10 points</p>
+                    <button class="buy-btn btn btn-success">Upgrade</button>
+                </div>
+                <div class="item">
+                    <p>Coffee Shop</p>
+                    <p>Cost: 50 points</p>
+                    <button class="buy-btn btn btn-success">Upgrade</button>
+                </div>
+                <!-- Add more items here -->
+            </div>
+        </div>
+    </div>
 
+
+    
     <!-- Bootstrap & jQuery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -75,6 +92,36 @@
                 score = 0;
                 $('#score').text('Score: ' + score);
             });
+        });
+    </script>
+     <script>
+        $(document).ready(function () {
+            let score = 0;
+            let income = 0;
+
+            // Sample items (you can add more)
+            const items = [
+                { name: 'Lemonade Stand', cost: 10, incomeRate: 1 },
+                { name: 'Coffee Shop', cost: 50, incomeRate: 5 }
+                // Add more items here
+            ];
+
+            // Handle item upgrades
+            $('.buy-btn').click(function () {
+                const itemIndex = $(this).parent().index();
+                const item = items[itemIndex];
+                if (score >= item.cost) {
+                    score -= item.cost;
+                    income += item.incomeRate;
+                    $('#score').text(`Score: ${score}`);
+                }
+            });
+
+            // Update income periodically (adjust interval as needed)
+            setInterval(function () {
+                score += income;
+                $('#score').text(`Score: ${score}`);
+            }, 1000); // Update every second
         });
     </script>
 </body>
