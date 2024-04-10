@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Sus Game</title>
+    <style>
+        /* Style the game area */
+        #game-area {
+            width: 300px;
+            height: 300px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        /* Style the Sus character */
+        .sus {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catch the Sus!</h1>
+    <div id="game-area">
+        <!-- Create the Sus character -->
+        <div class="sus" id="sus"></div>
+    </div>
+
+    <script>
+        // Get the Sus element
+        const susElement = document.getElementById('sus');
+
+        // Randomly position the Sus character within the game area
+        function randomPosition() {
+            const maxX = 250; // Adjust based on game area size
+            const maxY = 250; // Adjust based on game area size
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+            susElement.style.left = `${x}px`;
+            susElement.style.top = `${y}px`;
+        }
+
+        // When the player clicks on the Sus character
+        susElement.addEventListener('click', () => {
+            alert('You caught the Sus! 🎉');
+            randomPosition(); // Move the Sus to a new random position
+        });
+
+        // Initialize the game
+        randomPosition();
+    </script>
+</body>
+</html>
