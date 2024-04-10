@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tycoon Game</title>
     <!-- Bootstrap CSS -->
@@ -65,32 +66,13 @@
                 <!-- Add more items here -->
             </div>
         </div>
-    </div>    <div id="game-container">
-        <div id="game">
+    </div>
 
     <!-- Bootstrap & jQuery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
-    <script>
-        $(document).ready(function () {
-            let score = 0;
-
-            // Increase score when increase button is clicked
-            $('#increase-btn').click(function () {
-                score++;
-                $('#score').text('Score: ' + score);
-            });
-
-            // Reset score when reset button is clicked
-            $('#reset-btn').click(function () {
-                score = 0;
-                $('#score').text('Score: ' + score);
-            });
-        });
-    </script>
-
     <script>
         $(document).ready(function () {
             let score = 0;
