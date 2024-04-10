@@ -25,10 +25,6 @@
         #upgrade-button {
             background-color: #27ae60;
         }
-        #achievements-list {
-            text-align: left;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -43,12 +39,6 @@
     <!-- Upgrade button -->
     <button id="upgrade-button" onclick="upgradeJob()">Upgrade Job</button>
 
-    <!-- Achievements -->
-    <h2>Achievements</h2>
-    <ul id="achievements-list">
-        <!-- Achievements will be dynamically added here -->
-    </ul>
-
     <!-- Buy a house button -->
     <button onclick="buyHouse()">Buy a House</button>
 
@@ -60,7 +50,6 @@
         function workJob(jobName, earningRate) {
             points += earningRate;
             document.getElementById('points').textContent = points;
-            checkAchievements();
         }
 
         function upgradeJob() {
@@ -68,32 +57,13 @@
                 points -= jobLevel * 50;
                 jobLevel++;
                 document.getElementById('points').textContent = points;
-                checkAchievements();
             }
-        }
-
-        function checkAchievements() {
-            const achievementsList = document.getElementById('achievements-list');
-            if (points >= 100) {
-                addAchievement("Reached 100 points!");
-            }
-            if (jobLevel >= 2) {
-                addAchievement("Unlocked better jobs!");
-            }
-            // Add more achievement conditions here
-        }
-
-        function addAchievement(achievementText) {
-            const li = document.createElement('li');
-            li.textContent = achievementText;
-            document.getElementById('achievements-list').appendChild(li);
         }
 
         function buyHouse() {
             if (points >= 500 && !houseOwned) {
                 points -= 500;
                 houseOwned = true;
-                addAchievement("Bought a cozy house!");
                 document.getElementById('points').textContent = points;
             }
         }
