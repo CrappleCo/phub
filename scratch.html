@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedding TurboWarp Project</title>
+    <title>Multiple TurboWarp Games with Mouse Lock</title>
 </head>
 <body>
-    <!-- Replace the following iframe src with the URL of your TurboWarp project -->
-    <iframe src="https://turbowarp.org/projects/891469442/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no"></iframe>
+    <!-- First TurboWarp project with mouse lock -->
+    <iframe id="turboWarpProject1" src="https://turbowarp.org/projects/891469442/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no"></iframe>
+
+    <!-- Second TurboWarp project (no mouse lock) -->
+    <iframe src="https://turbowarp.org/projects/98765432/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no"></iframe>
+
+    <!-- Add more TurboWarp projects as needed -->
+
+    <script>
+        // Hide the mouse pointer for the first TurboWarp project
+        const turboWarpProject1 = document.getElementById('turboWarpProject1');
+        turboWarpProject1.style.pointerEvents = 'none';
+    </script>
 </body>
 </html>
