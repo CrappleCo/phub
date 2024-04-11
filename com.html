@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website with Comments</title>
+    <style>
+        /* Basic styling for the comment section */
+        .comments-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .comment {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website!</h1>
+    <div class="comments-container">
+        <h2>Comments</h2>
+        <div class="comment">
+            <strong>User123:</strong> This is great!
+        </div>
+        <div class="comment">
+            <strong>Visitor456:</strong> Nice work!
+        </div>
+        <!-- Add more comments dynamically using JavaScript -->
+        <div id="new-comment"></div>
+        <input type="text" id="comment-input" placeholder="Add a comment...">
+        <button onclick="addComment()">Submit</button>
+    </div>
+
+    <script>
+        // JavaScript function to add a new comment
+        function addComment() {
+            const commentInput = document.getElementById('comment-input');
+            const newComment = commentInput.value;
+            const commentContainer = document.getElementById('new-comment');
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            commentElement.innerHTML = `<strong>You:</strong> ${newComment}`;
+            commentContainer.appendChild(commentElement);
+            commentInput.value = ''; // Clear input field
+        }
+    </script>
+</body>
+</html>
