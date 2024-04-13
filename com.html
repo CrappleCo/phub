@@ -1,51 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website with Persistent Comments</title>
-    <style>
-        /* Basic styling for the comment section */
-        .comments-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .comment {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to My Website!</h1>
-    <div class="comments-container">
-        <h2>Comments</h2>
-        <!-- Existing comments will be loaded from the server -->
-        <div id="existing-comments"></div>
-        <input type="text" id="comment-input" placeholder="Add a comment...">
-        <button onclick="addComment()">Submit</button>
-    </div>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>New webpage</title>
+    </head>
+    <body>
 
-    <script>
-        // JavaScript function to add a new comment
-        function addComment() {
-            const commentInput = document.getElementById('comment-input');
-            const newComment = commentInput.value;
-
-            // Simulate sending the comment to the server (replace with actual AJAX request)
-            // In practice, you'd send this data to your backend (e.g., PHP script)
-            // to store the comment in a database.
-            // For demonstration purposes, we'll just append it to the existing comments.
-            const commentContainer = document.getElementById('existing-comments');
-            const commentElement = document.createElement('div');
-            commentElement.className = 'comment';
-            commentElement.innerHTML = `<strong>You:</strong> ${newComment}`;
-            commentContainer.appendChild(commentElement);
-
-            commentInput.value = ''; // Clear input field
-        }
-    </script>
-</body>
+<script async src="https://utteranc.es/client.js" repo="<CrappleCo>/<phub.github.io>" issue-term="title" theme="github-light" crossorigin="anonymous"></script>
+    </body>
 </html>
