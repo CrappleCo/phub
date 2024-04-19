@@ -3,34 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Clock</title>
+    <title>Scary Maze Game</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            overflow: hidden;
         }
-        #clock {
-            font-size: 2rem;
-            margin-top: 20px;
+        #maze {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .wall {
+            background-color: darkred;
+            position: absolute;
+        }
+        .player {
+            background-color: yellow;
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <div id="clock"></div>
+    <div id="maze">
+        <!-- Create your maze walls here -->
+        <div class="wall" style="width: 20px; height: 200px; top: 100px; left: 100px;"></div>
+        <!-- Add more walls as needed -->
+
+        <!-- Player -->
+        <div class="player" id="player"></div>
+    </div>
 
     <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const timeString = `${hours}:${minutes}:${seconds}`;
-            document.getElementById('clock').textContent = timeString;
-        }
+        const player = document.getElementById('player');
+        const maze = document.getElementById('maze');
 
-        // Update the clock every second
-        setInterval(updateClock, 1000);
-        updateClock(); // Initial call to display time immediately
+        // Set initial player position
+        let playerX = 10;
+        let playerY = 10;
+        player.style.left = playerX + 'px';
+        player.style.top = playerY + 'px';
+
+        // Handle arrow key movements
+        document.addEventListener('keydown', (e) => {
+            switch (e.key) {
+                case 'ArrowUp':
+                    playerY -= 10;
+                    break;
+                case 'ArrowDown':
+                    playerY += 10;
+                    break;
+                case 'ArrowLeft':
+                    playerX -= 10;
+                    break;
+                case 'ArrowRight':
+                    playerX += 10;
+                    break;
+            }
+            player.style.left = playerX + 'px';
+            player.style.top = playerY + 'px';
+
+            // Check if player hits a wall (you can add collision detection logic here)
+        });
     </script>
 </body>
 </html>
