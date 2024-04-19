@@ -3,76 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Add your CSS styles here */
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-        canvas {
-            background-color: #000;
-            display: block;
-        }
-    </style>
-    <title>Space Shooter Game</title>
+    <title>Text and Call App</title>
 </head>
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.chat-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.input-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+</style>
 <body>
-    <canvas id="gameCanvas"></canvas>
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <!-- Display chat messages here -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
     <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
+        // script.js
+const chatMessages = document.getElementById('chat-messages');
+const messageInput = document.getElementById('message-input');
 
-        // Player setup
-        const player = {
-            x: canvas.width / 2,
-            y: canvas.height - 50,
-            width: 30,
-            height: 30,
-            speed: 5,
-        };
+function sendMessage() {
+    const message = messageInput.value.trim();
+    if (message) {
+        // Simulate sending the message to the server (you'd need a backend for this)
+        displayMessage('You', message);
+        messageInput.value = '';
+    }
+}
 
-        // Game loop
-        function gameLoop() {
-            // Clear canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+function displayMessage(sender, text) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.textContent = `${sender}: ${text}`;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
-            // Update player position
-            if (leftPressed) {
-                player.x -= player.speed;
-            }
-            if (rightPressed) {
-                player.x += player.speed;
-            }
+// Example usage:
+displayMessage('Friend', 'Hey there! How are you?');
 
-            // Draw player
-            ctx.fillStyle = 'white';
-            ctx.fillRect(player.x, player.y, player.width, player.height);
-
-            requestAnimationFrame(gameLoop);
-        }
-
-        // Keyboard controls
-        let leftPressed = false;
-        let rightPressed = false;
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                leftPressed = true;
-            } else if (e.key === 'ArrowRight') {
-                rightPressed = true;
-            }
-        });
-
-        document.addEventListener('keyup', (e) => {
-            if (e.key === 'ArrowLeft') {
-                leftPressed = false;
-            } else if (e.key === 'ArrowRight') {
-                rightPressed = false;
-            }
-        });
-
-        // Start the game loop
-        requestAnimationFrame(gameLoop);
     </script>
 </body>
 </html>
