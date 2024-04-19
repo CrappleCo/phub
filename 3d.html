@@ -3,83 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text and Call App</title>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #clock {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<style>
-    /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-}
-
-.chat-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.chat-messages {
-    height: 300px;
-    overflow-y: scroll;
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.input-container {
-    display: flex;
-    margin-top: 10px;
-}
-
-#message-input {
-    flex-grow: 1;
-    padding: 5px;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-</style>
 <body>
-    <div class="chat-container">
-        <div class="chat-messages" id="chat-messages">
-            <!-- Display chat messages here -->
-        </div>
-        <div class="input-container">
-            <input type="text" id="message-input" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
+    <div id="clock"></div>
+
     <script>
-        // script.js
-const chatMessages = document.getElementById('chat-messages');
-const messageInput = document.getElementById('message-input');
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
 
-function sendMessage() {
-    const message = messageInput.value.trim();
-    if (message) {
-        // Simulate sending the message to the server (you'd need a backend for this)
-        displayMessage('You', message);
-        messageInput.value = '';
-    }
-}
-
-function displayMessage(sender, text) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message');
-    messageElement.textContent = `${sender}: ${text}`;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-// Example usage:
-displayMessage('Friend', 'Hey there! How are you?');
-
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to display time immediately
     </script>
 </body>
 </html>
