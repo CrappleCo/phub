@@ -2,12 +2,59 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>phubhub</title>
-    </head>
-     <style>
+        <title>Pokehub!</title>
+        <style>
+            /* Dropdown Button */
+.dropbtn {
+    background-color: black;
+    color: #00ff00;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: black;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #00ff00;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: black;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
         /* Basic styling for the header */
         .header {
-            background-color: #333;
+            background-color: black;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -15,69 +62,84 @@
         .logo {
             font-size: 24px;
             text-decoration: none;
-            color: #fff;
+            color: #00ff00;
+            animation: blinker 1s linear infinite;
         }
-        .nav-items {
+         .nav-items {
             margin-top: 10px;
         }
         .nav-items a {
             margin-right: 20px;
-            color: #fff;
+            color: #00ff00;
             text-decoration: none;
         }
-
-        /* Styling for the main content */
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        .intro h1 {
-            font-size: 28px;
-        }
-        .intro p {
-            font-size: 16px;
-        }
-        .achievements {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .work {
-            text-align: center;
-        }
-        .work-heading {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-        .work-text {
-            font-size: 14px;
-        }
-
+        
         /* Styling for the footer */
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: black;
+            color: #00ff00;
             padding: 10px;
             text-align: center;
         }
-    </style>
+                body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+  h1 {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+      p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+          .blink {
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+      
+        </style>
+    </head>
     <body>
-    <header class="header">
-        <a href="#" class="logo">Your Logo</a>
+
+
+<header class="header">
+        <a href="#" class="logo">PhubHub</a>
         <nav class="nav-items">
             <a href="https://crappleco.github.io/phub.github.io/">Home</a>
-            <a href="other_file.html">Game</a>
+            <a href="other_file.html">Pokehub game!</a>
+            <a href="https://josh-hutcherson.github.io/Somethings-Sus/">Sus tycoon</a>
+            <a href="com.html">Comment section</a>
+            <a href="phubhub.html">Vidzzz</a>
+<div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropbtn">Phub hub Games</button>
+    <div id="myDropdown" class="dropdown-content">
+                <a href="phunhub.html">???</a>
+            <a href="num.html">noomnum</a>
             <a href="sus.html">Sus???</a>
-            <a href="https://josh-hutcherson.github.io/Somethings-Sus/">Tycoon</a>
-            <a href="num.html">Turbowarp games</a>
-            <a href="com.html">Comment</a>
-          <a href="phubhub.html">vidzzzzz</a>
+            
+    </div>
+</div>
+   
             <a href="https://crappleco.github.io/BigChonkees.github.io/">order food here</a>
         </nav>
     </header>
-        
-    
-    <video width="320" height="240" controls>
+<p class="blink">Welcome to Phub hub vidzzz</p>
+
+<script>
+function toggleDropdown() {
+    var dropdown = document.getElementById("myDropdown");
+    dropdown.classList.toggle("show");
+}
+</script>
+<video width="320" height="240" controls>
      <source src="foot.mp4" type="video/mp4" height = "200">
         This video? You cant watch it.
         </video>
@@ -92,6 +154,9 @@
         This video? You cant watch it.
         </video>
 
+        <footer>
+        © 2024 Your Name | Contact: phubhub@madeupemail.com |
+        </footer>
 
     </body>
 </html>
