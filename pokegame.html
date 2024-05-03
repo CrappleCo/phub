@@ -7,6 +7,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <title>Pokémon Game</title>
     <style>
+    
+
         /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
@@ -29,15 +31,135 @@
             font-size: 20px;
             color: #333;
         }
+        
+        
+                   /* Dropdown Button */
+.dropbtn {
+    background-color: black;
+    color: #00ff00;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: black;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #00ff00;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: black;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+        /* Basic styling for the header */
+        .header {
+            background-color: black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            text-decoration: none;
+            color: #00ff00;
+            animation: blinker 1s linear infinite;
+        }
+         .nav-items {
+            margin-top: 10px;
+        }
+        .nav-items a {
+            margin-right: 20px;
+            color: #00ff00;
+            text-decoration: none;
+        }
+        
+        /* Styling for the footer */
+        footer {
+            background-color: black;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+        }
+                body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+          .blink {
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+      
     </style>
 </head>
 <body>
+
+
+<header class="header">
+        <a href="#" class="logo">PhubHub</a>
+        <nav class="nav-items">
+            <a href="https://crappleco.github.io/phub.github.io/">Home</a>
+            <a href="pokegame.html">Pokehub game!</a>
+            <a href="https://josh-hutcherson.github.io/Somethings-Sus/">Sus tycoon</a>
+            <a href="com.html">Comment section</a>
+            <a href="phubvid.html">Vidzzz</a>
+<div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropbtn">Phub hub Games</button>
+    <div id="myDropdown" class="dropdown-content">
+                <a href="phunhub.html">???</a>
+            <a href="num.html">noomnum</a>
+            <a href="sus.html">Sus???</a>
+            
+    </div>
+</div>
+   
+            <a href="https://crappleco.github.io/BigChonkees.github.io/">order food here</a>
+        </nav>
+    </header>
+
     <div class="pokemon" id="pokemon">P</div>
-    <button onclick="movePokemon()">Move Pokémon</button>
-    <button onclick="catchPokemon()">Catch Pokémon</button>
-    <button onclick="healPokemon()">Use Potion</button>
-    <button onclick="evolvePokemon()">Evolve Pokémon</button>
-    <button onclick="showPokedex()">Open Pokédex</button>
+    <button onclick="movePokemon()" class = "dropbtn">Move Pokémon</button>
+    <button onclick="catchPokemon()" class = "dropbtn">Catch Pokémon</button>
+    <button onclick="healPokemon()" class = "dropbtn">Use Potion</button>
+    <button onclick="evolvePokemon()" class = "dropbtn">Evolve Pokémon</button>
+    <button onclick="showPokedex()" class = "dropbtn">Open Pokédex</button>
+
 
     <script>
         // JavaScript logic
@@ -99,6 +221,16 @@
             }
         }
     </script>
+
+
+
+<script>
+function toggleDropdown() {
+    var dropdown = document.getElementById("myDropdown");
+    dropdown.classList.toggle("show");
+}
+</script>
+
+
 </body>
 </html>
-
