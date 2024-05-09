@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Pokehub!</title>
-        
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-        <style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>PhubHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<style>
+    /* Your CSS rules go here */
+
+    h1 {
+        color: #00ff00;
+        margin-left: 20px;
+    }
+    /* style.css */
+
+/* Base styles */
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
             /* Dropdown Button */
 .dropbtn {
     background-color: black;
@@ -53,20 +79,8 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display: block;
-}
-        /* Basic styling for the header */
-        .header {
-            background-color: black;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .logo {
-            font-size: 24px;
-            text-decoration: none;
-            color: #00ff00;
-            animation: blinker 1s linear infinite;
-        }
+} 
+     }
          .nav-items {
             margin-top: 10px;
         }
@@ -75,14 +89,35 @@
             color: #00ff00;
             text-decoration: none;
         }
-        
-        /* Styling for the footer */
-        footer {
-            background-color: black;
-            color: #00ff00;
-            padding: 10px;
-            text-align: center;
-        }
+/* Main content styles */
+#container1 {
+    text-align: center;
+    padding: 30px;
+}
+
+.btn {
+    background-color: black;
+    color: #00ff00;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Featured products styles */
+#container4 {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #272d36;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
                 body {
             background-color: #000;
             color: #00ff00;
@@ -107,13 +142,20 @@
                 opacity: 0;
             }
       
-        </style>
-    </head>
-    <body>
+</style>
 
-
-<header class="header">
-        <a href="#" class="logo">PhubHub</a>
+</head>
+<body>
+    <header>
+        <h1 id="top" class = "blink">Phub</h1>
+        <h1 id="top1" class = "blink">Hub</h1>
+    </header>
+    <div id="promo">
+        <img src="food-delivery.png" alt="Delicious Food">
+        <p>Explore our mouthwatering menu and place your order now!</p>
+    </div>
+    
+    <header class="header">
         <nav class="nav-items">
             <a href="index.html">Home</a>
             <a href="pokegame.html">Pokehub game!</a>
@@ -129,39 +171,14 @@
             
     </div>
 </div>
-   
-            <a href="https://crappleco.github.io/BigChonkees.github.io/">order food here</a>
         </nav>
-    </header>
-<p class="blink">Welcome to Phub hub</p>
-<p>hiii</p><p>hiii</p><p>hiii</p><p>hiii</p><p>hiii</p><p>hiii</p><p>hiii</p><p>hiii</p>
-
-<script>
-function toggleDropdown() {
-    var dropdown = document.getElementById("myDropdown");
-    dropdown.classList.toggle("show");
-}
-</script>
-    <div id="clock"></div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const timeString = `${hours}:${minutes}:${seconds}`;
-            document.getElementById('clock').textContent = timeString;
-        }
-
-        // Update the clock every second
-        setInterval(updateClock, 1000);
-        updateClock(); // Initial call to display time immediately
-    </script>
-
-        <footer>
-        © 2024 Your Name | Contact: phubhub@madeupemail.com |
-        </footer>
-
-    </body>
+    </header><br>
+    <h1 id="top3">Featured Products</h1>
+    <div id="container4">
+        <div id="row4"><button class="btn">ORDER NOW</button></div>
+        <div id="row5"><button class="btn">ORDER NOW</button></div>
+        <div id="row6"><button class="btn">ORDER NOW</button></div>
+    </div>
+    <footer>© 2020-2024 Phubhub. All rights reserved.</footer>
+</body>
 </html>
